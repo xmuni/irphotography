@@ -17,7 +17,7 @@ main
 {
 	width: 80vw;
 	margin: 3vw auto 150px auto;
-	padding: 3vw 3vw 5vw 3vw;
+	padding: 2vw 3vw 3vw 3vw;
 	background: #444;
 }
 
@@ -42,7 +42,7 @@ h1
 
 #flex
 {
-	width: 75vw;
+	width: 80vw;
 	margin: 0px auto;
 
 	display: flex;
@@ -81,7 +81,7 @@ h1
 	width: calc(100% / var(--columns) - 10px);
 
 	/*height: 10vw;*/
-	height: calc(75vw / 3 * 2 / var(--columns) - 10px); // width of #flex divided by 3/2 and divided by the number of columns
+	height: calc(80vw / 3 * 2 / var(--columns) - 10px); // width of #flex divided by 3/2 and divided by the number of columns
 }
 
 .small
@@ -116,6 +116,32 @@ h1
 	{
 		--columns: 3;
 	}
+
+	main
+	{
+		width: 90vw;
+	}
+
+	#flex
+	{
+		width: 88vw;
+	}
+
+	.big
+	{
+		width: calc(80% - 10px);
+	}
+
+	.big img
+	{
+		max-height: 50vw;
+	}
+	
+	.small
+	{
+		/*width: calc(20%/3 - 10px);*/
+		width: calc(10% - 10px);
+	}
 }
 
 
@@ -125,6 +151,21 @@ h1
 	:root
 	{
 		--columns: 1;
+	}
+
+	main
+	{
+		width: 100vw;
+	}
+
+	#flex
+	{
+		width: calc(100% - 10px);
+	}
+
+	#flex .box
+	{
+		height: calc(100% / 3 * 2);
 	}
 
 	header h1
