@@ -1,4 +1,6 @@
 
+	const window_width_small = 600;
+	const window_width_large = 1800;
 
 	var columns = 5;
 
@@ -46,9 +48,9 @@
 
 	function toggleSizeImg(thisImg)
 	{
-		if(window.innerWidth > 1800)
+		if(window.innerWidth > window_width_large)
 			columns = 5;
-		else if(window.innerWidth > 600)
+		else if(window.innerWidth > window_width_small)
 			columns = 3;
 		else
 		{
@@ -112,11 +114,11 @@
 
 	function setImg(img, size)
 	{
-	//	if(window.innerWidth >= 600)
-	//	{
+		if(window.innerWidth > window_width_small)
+		{
 			img.style.cursor = "zoom-in";
 			img.classList.add("highlight");
-	//	}
+		}
 		img.classList.remove("big");
 		img.classList.remove("small");
 		img.classList.remove("medium");
