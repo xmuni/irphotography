@@ -102,6 +102,7 @@ header h1
 	/*width: calc(20%/3 - 10px);*/
 	width: calc(10% - 5px);
 	object-fit: cover;
+	-webkit-object-fit: fill;
 }
 
 .highlight:hover
@@ -144,6 +145,7 @@ header h1
 	{
 		width: calc(10% - 10px);
 		object-fit: cover;
+		-webkit-box-flex: 1;
 	}
 }
 
