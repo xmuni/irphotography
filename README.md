@@ -1,3 +1,3 @@
 # IR Photography
 
-https://github.com/xmuni/irphotography
+https://xmuni.github.io/irphotography/
