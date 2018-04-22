@@ -87,12 +87,12 @@ header h1
 
 .big
 {
-	width: calc(60% - 30px);
+	width: calc(73.333% - 40px);
 }
 
 .big img
 {
-	max-height: 40vw;
+	max-height: 45vw;
 	object-fit: contain;
 	/*background: #222;*/
 }
@@ -100,7 +100,7 @@ header h1
 .small
 {
 	/*width: calc(20%/3 - 10px);*/
-	width: calc(10% - 5px);
+	width: calc(20%/3 - 5px);
 	object-fit: cover;
 	-webkit-object-fit: fill;
 }

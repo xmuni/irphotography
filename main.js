@@ -1,45 +1,57 @@
 
+
 	const window_width_small = 600;
 	const window_width_large = 1800;
-
 	var columns = 5;
-
 	var all_images = document.querySelectorAll("#flex .box");
-	var position = -1;
-	
-	setImgMultiple(all_images, "medium");
 
-	all_images.forEach(img => img.addEventListener("click", toggleSizeSelf));
 
-	// keyboard navigation
-	document.addEventListener("keydown", function(event)
+	if(!isIOS())
+		enableZoom();
+
+
+	function enableZoom()
 	{
-		if(event.which == 27) // esc
+		// var position = -1;
+		
+		setImgMultiple(all_images, "medium");
+
+		all_images.forEach(img => img.addEventListener("click", toggleSizeSelf));
+
+		// keyboard navigation
+		document.addEventListener("keydown", function(event)
 		{
-			setImgMultiple(all_images, "medium");
-			return;
-		}
+			if(event.which == 27) // esc
+			{
+				setImgMultiple(all_images, "medium");
+				return;
+			}
 
-		var index_big = get_index_of_class(all_images, "big");
+			var index_big = get_index_of_class(all_images, "big");
 
-		//    38
-		// 37 40 39
+			//    38
+			// 37 40 39
 
-		var index_to_toggle = -1;
+			var index_to_toggle = -1;
 
-		if(event.which == 37) // left
-			index_to_toggle = index_big-1;
-		else if(event.which == 39) // right
-			index_to_toggle = index_big+1;
-		else
-			return;
+			if(event.which == 37) // left
+				index_to_toggle = index_big-1;
+			else if(event.which == 39) // right
+				index_to_toggle = index_big+1;
+			else
+				return;
 
-		// check for out of bounds
-		if(index_to_toggle > -1 && index_to_toggle < all_images.length)
-			toggleSizeImg(all_images[index_to_toggle]);
-		else if(index_to_toggle <= -1 || index_to_toggle >= all_images.length)
-			setImgMultiple(all_images, "medium");
-	});
+			// check for out of bounds
+			if(index_to_toggle > -1 && index_to_toggle < all_images.length)
+				toggleSizeImg(all_images[index_to_toggle]);
+			else if(index_to_toggle <= -1 || index_to_toggle >= all_images.length)
+				setImgMultiple(all_images, "medium");
+		});
+
+	}
+
+
+
 
 	function toggleSizeSelf()
 	{
@@ -154,4 +166,11 @@
 			if(elembottom > viewbottom)
 				window.scrollBy(0,elembottom-viewbottom+margin);
 		}
+	}
+
+	function isIOS()
+	{
+		// var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+		var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+		return iOS;
 	}
