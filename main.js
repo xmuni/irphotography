@@ -46,12 +46,16 @@
 
 	function toggleSizeImg(thisImg)
 	{
-		if(window.innerWidth >= 1800)
+		if(window.innerWidth > 1800)
 			columns = 5;
-		else if(window.innerWidth >= 600)
+		else if(window.innerWidth > 600)
 			columns = 3;
 		else
-			return; // don't zoom images on click
+		{
+			columns = 1;
+			return;
+		}
+
 
 		if(thisImg.classList.contains("big"))
 		{
@@ -108,11 +112,11 @@
 
 	function setImg(img, size)
 	{
-		if(window.innerWidth >= 600)
-		{
+	//	if(window.innerWidth >= 600)
+	//	{
 			img.style.cursor = "zoom-in";
 			img.classList.add("highlight");
-		}
+	//	}
 		img.classList.remove("big");
 		img.classList.remove("small");
 		img.classList.remove("medium");
@@ -142,8 +146,8 @@
 			var elembottom = elemtop + element.clientHeight;
 			var viewbottom = scrolled + (window.innerHeight);
 			
-			console.log(elembottom);
-			console.log(viewbottom);
+		//	console.log(elembottom);
+		//	console.log(viewbottom);
 
 			if(elembottom > viewbottom)
 				window.scrollBy(0,elembottom-viewbottom+margin);

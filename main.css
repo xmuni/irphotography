@@ -1,8 +1,10 @@
+/*
 :root
 {
-  --columns: 5;
-  --sizebig: calc(20%/3*11); // 73.3% (3.33 columns)
+	--columns: 5;
+	--sizebig: calc(20%/3*11); // 73.3% (3.33 columns)
 }
+*/
 
 body
 {
@@ -15,9 +17,9 @@ body
 
 main
 {
-	width: 80vw;
+	width: 85vw;
 	margin: 3vw auto 150px auto;
-	padding: 2vw 3vw 3vw 3vw;
+	padding: 3.5vw 0;
 	background: #444;
 }
 
@@ -43,53 +45,61 @@ h1
 #flex
 {
 	width: 80vw;
-	margin: 0px auto;
+	margin: 0 auto;
 
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 
-	background: #777;
+	/*background: #777;*/
 }
 
 .box
 {
-	/*padding: 5px;*/
+	/*margin: 5px;*/
 	box-sizing: border-box;
+	/*background: darkcyan;*/
+}
+
+.box:nth-child(even)
+{
+	/*background: white;*/
 }
 
 .box img
 {
+	/*position: relative;*/
 
 	width: calc(100% - 10px);
 	height: calc(100% - 10px);
+	margin: 5px;
 	object-fit: cover;
 }
 
 .medium
 {
-	width: calc(100% / var(--columns) - 10px);
+	width: calc(20% - 10px);
 
-	/*height: 10vw;*/
-	height: calc(80vw / 3 * 2 / var(--columns) - 10px); // width of #flex divided by 3/2 and divided by the number of columns
+	height: 12vw; /* 80vw / 3*2 / 5 */
+	/*height: calc(20% / 3 * 2);*/
 }
 
 .big
 {
-	width: calc(100%/15*11 - 10px);
+	width: calc(60% - 30px);
 }
 
 .big img
 {
-	max-height: 45vw;
+	max-height: 40vw;
 	object-fit: contain;
-	background: #222;
+	/*background: #222;*/
 }
 
 .small
 {
 	/*width: calc(20%/3 - 10px);*/
-	width: calc(20%/3 - 10px);
+	width: calc(10% - 5px);
 }
 
 .highlight:hover
@@ -109,24 +119,12 @@ h1
 
 
 
-
-
-/* three columns */
 @media screen and (max-width: 1800px)
 {
-	:root
+	.medium
 	{
-		--columns: 3;
-	}
-
-	main
-	{
-		width: 90vw;
-	}
-
-	#flex
-	{
-		width: 88vw;
+		width: calc(100%/3 - 10px);
+		height: 18vw;
 	}
 
 	.big
@@ -141,33 +139,24 @@ h1
 	
 	.small
 	{
-		/*width: calc(20%/3 - 10px);*/
 		width: calc(10% - 10px);
 	}
 }
 
 
-/* single columns*/
+/* single column */
 @media screen and (max-width: 600px)
 {
-	:root
+	.medium
 	{
-		--columns: 1;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
 	}
 
-	main
+	.big, .small
 	{
-		width: 100vw;
-	}
-
-	#flex
-	{
-		width: calc(100% - 10px);
-	}
-
-	#flex .box
-	{
-		height: calc(100% / 3 * 2);
+		width: 100%;
 	}
 
 	header h1
@@ -187,12 +176,8 @@ h1
 
 
 
-
-
-
-
-
-.animationMB /*medium to big*/
+/*
+.animationMB // medium to big
 {
 	animation-duration: 1s;
 	animation-name: medbig;
@@ -213,7 +198,9 @@ h1
 		object-fit: contain;
 	}
 }
+*/
 
+/*
 @keyframes fadein
 {
 	from
@@ -225,3 +212,5 @@ h1
 		opacity: 1;
 	}
 }
+
+*/
